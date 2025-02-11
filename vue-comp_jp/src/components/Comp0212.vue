@@ -4,10 +4,10 @@
     row-key="id"
     default-expand-all
   >
-    <el-table-column prop="date" label="15項法規名称" />
-    <el-table-column prop="name" label="物質名称" />
-    <el-table-column prop="name" label="法令名称" />
-    <el-table-column prop="address" label="元素換算値係数" />
+    <el-table-column prop="key1" label="15項法規名称" />
+    <el-table-column prop="key2" label="物質名称" />
+    <el-table-column prop="key3" label="法令名称" />
+    <el-table-column prop="key4" label="元素換算値係数" />
     <el-table-column label="Lock" width="120" align="center">
       <template #default="scope">
         <el-checkbox v-model="scope.row.locked" @change="handleCheckboxChange(scope.row)"/>
@@ -26,37 +26,41 @@
 const tableData = [
   {
     id: 1,
-    date: '2016-05-02',
-    name: 'wangxiaohu',
-    address: 'No. 189, Grove St, Los Angeles',
+    key1: '法規名称1',
+    key2: '物質名称1',
+    key3: '法令名称1',
+    key4: '元素換算値係数1',
     locked: false,
     remark: '备注1'
   },
   {
     id: 2,
-    date: '2016-05-04',
-    name: 'wangxiaohu',
-    address: 'No. 189, Grove St, Los Angeles',
+    key1: '法規名称2',
+    key2: '物質名称2',
+    key3: '法令名称2',
+    key4: '元素換算値係数2',
     children: [
       {
         id: 31,
-        date: '2016-05-01',
-        name: 'wangxiaohu',
-        address: 'No. 189, Grove St, Los Angeles',
+        key1: '法規名称2-1',
+        key2: '物質名称2-1',
+        key3: '法令名称2-1',
+        key4: '元素換算値係数2-1',
         locked: false,
-        remark: '备注1'
+        remark: '备注2-1'
       },
       {
         id: 32,
-        date: '2016-05-01',
-        name: 'wangxiaohu',
-        address: 'No. 189, Grove St, Los Angeles',
+        key1: '法規名称2-2',
+        key2: '物質名称2-2',
+        key3: '法令名称2-2',
+        key4: '元素換算値係数2-2',
         locked: false,
-        remark: '备注1'
+        remark: '备注2-2'
       },
     ],
     locked: false,
-    remark: '备注1'
+    remark: '备注2'
   },
 ]
 
