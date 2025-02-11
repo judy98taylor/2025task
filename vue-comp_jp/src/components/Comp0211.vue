@@ -59,6 +59,10 @@ const handleInputBlur = (row) => {
       </template>
     </el-table-column>
 
-    <el-table-column prop="remark" label="備考欄" width="180" />
+    <el-table-column label="備考欄" width="180">
+      <template #default="scope">
+        <el-input v-model="scope.row.remark" @blur="handleInputBlur(scope.row)"/>
+      </template>
+    </el-table-column>
   </el-table>
 </template>
