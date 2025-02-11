@@ -2,6 +2,8 @@ import { createApp } from 'vue'
 // import './style.css'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
+// 引入自定义主题文件
+import './theme.css'
 import App from './App.vue'
 
 // createApp(App).mount('#app')

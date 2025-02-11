@@ -1,0 +1,31 @@
+:root {
+  --el-color-primary: #0172ad;
+  --el-color-primary-light-3: #4c9dd1;
+  --el-color-primary-light-5: #80b8dd;
+  --el-color-primary-light-7: #b3d4e9;
+  --el-color-primary-light-8: #cce1ef;
+  --el-color-primary-light-9: #e6f0f6;
+  --el-color-primary-dark-2: #015b8a;
+}
+
+/* 自定义表格样式 */
+.el-table {
+  --el-table-header-bg-color: var(--el-color-primary-light-9);
+  --el-table-border-color: var(--el-color-primary-light-7);
+}
+
+/* 自定义复选框样式 */
+.el-checkbox__input.is-checked .el-checkbox__inner {
+  background-color: var(--el-color-primary);
+  border-color: var(--el-color-primary);
+}
+
+/* 自定义输入框样式 */
+.el-input__inner:focus {
+  border-color: var(--el-color-primary);
+}
+
+/* 表格hover效果 */
+.el-table tr:hover > td {
+  background-color: var(--el-color-primary-light-9) !important;
+}
