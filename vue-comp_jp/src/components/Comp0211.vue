@@ -31,7 +31,7 @@
 <script setup>
 import { ref } from 'vue'
 
-window.tableData = ref([
+window.bus.tableData = ref([
   {
     key: '配置项1',
     selected: true,
@@ -55,12 +55,14 @@ window.tableData = ref([
   }
 ])
 
-const tableData = window.tableData;
+const tableData = window.bus.tableData;
 
 const handleCheckboxChange = (row) => {
+  window?.bus?.handleCheckboxChange(row);
   console.log(row); // 打印选中行的详细信息
 };
 const handleInputBlur = (row) => {
+  window?.bus?.handleCheckboxChange(row);
   console.log(row); // 打印修改行的详细信息
 };
 </script>

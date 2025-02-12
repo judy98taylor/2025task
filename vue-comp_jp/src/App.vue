@@ -1,13 +1,26 @@
 <script setup>
-import Comp0211 from './components/Comp0211.vue'
-import Comp0212 from './components/Comp0212.vue'
 import { ref } from 'vue'
+// 动态导入组件
+const componentModules = import.meta.glob('./components/*.vue')
 
 // 组件列表
 const components = [
   { name: 'Comp0211', path: '/pages/Comp0211.html' },
   { name: 'Comp0212', path: '/pages/Comp0212.html' }
 ]
+
+// 存储已加载的组件
+const loadedComponents = ref({})
+
+// 预加载所有组件
+components.forEach(async (comp) => {
+  const componentPath = `./components/${comp.name}.vue`
+  if (componentModules[componentPath]) {
+    const module = await componentModules[componentPath]()
+    loadedComponents.value[comp.name] = module.default
+  }
+})
+
 </script>
 
 <template>
@@ -25,9 +38,13 @@ const components = [
     <!-- 组件预览区域 -->
     <div class="preview-area">
       <h3>组件预览</h3>
-      <Comp0211 />
-      <br />
-      <Comp0212 />
+      <template v-for="comp in components" :key="comp.name">
+        <component 
+          v-if="loadedComponents[comp.name]" 
+          :is="loadedComponents[comp.name]" 
+        />
+        <br />
+      </template>
     </div>
   </div>
 </template>
