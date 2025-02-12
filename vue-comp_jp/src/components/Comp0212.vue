@@ -23,7 +23,7 @@
 </template>
 
 <script setup>
-const tableData = [
+window.tableData = [
   {
     id: 1,
     key1: '法規名称1',
@@ -64,9 +64,7 @@ const tableData = [
   },
 ]
 
-// 从window对象中获取tableData
-// window.tableData=[];
-// const tableData = window.tableData;
+const tableData = window.tableData;
 
 const handleCheckboxChange = (row) => {
   console.log(row); // 打印选中行的详细信息

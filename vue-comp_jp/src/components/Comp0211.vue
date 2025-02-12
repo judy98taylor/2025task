@@ -31,7 +31,7 @@
 <script setup>
 import { ref } from 'vue'
 
-const tableData = ref([
+window.tableData = ref([
   {
     key: '配置项1',
     selected: true,
@@ -55,9 +55,7 @@ const tableData = ref([
   }
 ])
 
-// 从window对象中获取tableData
-// window.tableData=[];
-// const tableData = window.tableData;
+const tableData = window.tableData;
 
 const handleCheckboxChange = (row) => {
   console.log(row); // 打印选中行的详细信息
